@@ -5,7 +5,7 @@ prob_calculator.random.seed(95)
 class UnitTests(unittest.TestCase):
     def test_hat_class_contents(self):
         hat = prob_calculator.Hat(red=3,blue=2)
-        actual = hat.contents
+        actual = hat.contents()
         expected = ["red","red","red","blue","blue"]
         self.assertEqual(actual, expected, 'Expected creation of hat object to add correct contents.')
 
@@ -14,7 +14,7 @@ class UnitTests(unittest.TestCase):
         actual = hat.draw(2)
         expected = ['blue', 'red']
         self.assertEqual(actual, expected, 'Expected hat draw to return two random items from hat contents.')
-        actual = len(hat.contents)
+        actual = len(hat.contents())
         expected = 5
         self.assertEqual(actual, expected, 'Expected hat draw to reduce number of items in contents.')
 
